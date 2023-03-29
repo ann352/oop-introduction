@@ -1,3 +1,5 @@
+package initialInfromatin;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -15,7 +17,6 @@ public class Main {
         int temperature = pot.returnTemperature();
         System.out.println(temperature);
 
-        pot.cookWithoutInformation();
+        pot.cookWithoutInformation(); //if we try tu extract result to variable we get for void an error
     }
-
 }

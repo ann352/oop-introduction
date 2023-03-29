@@ -1,3 +1,5 @@
+package initialInfromatin;
+
 public class Pot {
 
     int diameter;  //to avoid changing this fields after creating new object, here we shoudl add 'final' - but then we can't create object with no-args construktor
@@ -6,7 +8,6 @@ public class Pot {
 
     public Pot() {
     }
-
 
     public Pot(int diameter, int height, String colour) {
         this.diameter = diameter;
@@ -31,30 +32,44 @@ public class Pot {
     // return is the last line in method, we can overloading like constructors
     // then they have the same name but e.g. different arguments
 
-    public String cook(boolean saltIsAdded){
-        if (saltIsAdded){
+    public String cook(boolean saltIsAdded) {
+        if (saltIsAdded) {
             return "Cooking with salt";
-        }
-        else {
+        } else {
             return "Cooking without salt";
         }
     }
 
     //we can return different type of values from method also
 
-    public int returnTemperature(){
+    public int returnTemperature() {
         return 100;
     }
 
     //we can't create the same method with the same set of arguments and the same name, even if we return another type of value
     // compilator woudn't know what we want to do - it only check argument, not their name
 
-    void cookWithoutInformation(){
-        return; // when we create void we can return nothing - return -> is not necessary */
+    public void cookWithoutInformation() {
+        //we can use other methods in chosen method
+        turnOnCooking();
+        cookFor30minuts();
+        turnOfCooking();
+        // return; -> when we create void we can return nothing - return -> is not necessary */
+        // but this can end instruction, e.g. when we have if-else instruction in method, and for true argument we want do nothing
+        // methods used in this public method can be private -> because they're visible and used only in this class, not in Main class
     }
 
+    private void turnOnCooking() {
+        System.out.println("Cooking is starting");
+    }
 
+    private void cookFor30minuts() {
+        System.out.println("Meal is cooking for 30 minuts");
+    }
 
+    private void turnOfCooking() {
+        System.out.println("Cooking is ending");
+    }
 
-
+    //generally we should use single rsponsibility rule -> bigger piece of code should be refactor to smaller pieces
 }
