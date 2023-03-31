@@ -1,4 +1,4 @@
-package accessOfElements;
+package encapsulation;
 
 public class UserRegistration {
 
