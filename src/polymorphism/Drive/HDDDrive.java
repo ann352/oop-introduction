@@ -1,10 +1,10 @@
-package polymorphism;
+package polymorphism.Drive;
 
-
-import polymorphism.Drive.Drive;
+import polymorphism.File;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class HDDDrive implements Drive {
 
@@ -18,17 +18,21 @@ public class HDDDrive implements Drive {
     }
 
     @Override
-    public void listFile() {
+    public void listFiles() {
 
-        for (File file : files){
-            System.out.println(file);  //here we don't use on file -> method .toString() because it is implemented in sout
+        for (File file : files) {
+            System.out.println(file.getName());  //here we don't use on file -> method .toString() because it is implemented in sout
 
         }
-
     }
 
     @Override
-    public File findFile() {
+    public File findFile(String name) {
+//        Optional<File> foundFile = files.stream()
+//                .filter(file -> file.getName().equals(name))
+//                .findFirst();
+//        return foundFile.orElseThrow();
         return null;
     }
 }
+

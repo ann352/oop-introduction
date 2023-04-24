@@ -1,7 +1,8 @@
-package polymorphism;
+package polymorphism.Drive;
 
-import polymorphism.Drive.Drive;
+import polymorphism.File;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,12 +18,22 @@ public class SSDDrive implements Drive {
     }
 
     @Override
-    public void listFile() {
+    public void listFiles() {  //to list files, we take all values from the map and we put it in collection
+        Collection<File> fileCollection = files.values();
+
+        //later we iterate over every value in collection and we print the name of every file
+
+        for (File file : fileCollection) {
+            System.out.println(file.getName());
+        }
 
     }
 
     @Override
-    public File findFile() {
-        return null;
+    public File findFile(String name) {    //we take our map and from map we take file with given name
+        return files.get(name);
+
     }
+
+
 }

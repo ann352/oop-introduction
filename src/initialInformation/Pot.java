@@ -1,4 +1,4 @@
-package initialInfromatin;
+package initialInformation;
 
 public class Pot {
 

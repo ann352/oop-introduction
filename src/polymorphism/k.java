@@ -11,5 +11,5 @@ package polymorphism;
 // e.g. we want to have clean floor, but it dousn't matter by which object it should be done - brush, or cleaner
 // we can not create object of interface, when we implement given interface we have to use all its methods,
 
-public class Computer {
-}
+//public class Compuddter {
+//}

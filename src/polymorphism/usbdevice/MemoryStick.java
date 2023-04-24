@@ -1,18 +1,41 @@
 package polymorphism.usbdevice;
 
-public class MemporyStick implements USBDevice {
+public class MemoryStick implements USBDevice {
+
+    private String name;
+    private boolean ejected = false;
+
+    public MemoryStick(String name) {
+        this.name = name;
+    }
+
     @Override
     public boolean connected() {
-        return false;
+        System.out.println("Device connected");
+        return true;
     }
 
     @Override
     public boolean disconnected() {
-        return false;
+        if(!ejected){
+            System.out.println("Please eject the device first");
+        }
+        else{
+            System.out.println("Device disconnected");
+        }
+        return true;
     }
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
+
+
+    public boolean eject(){
+        System.out.println("Ejecting Memory Stick");
+        return ejected = true;
+    }
+
+    //method ejected() was absent in interface but it is normal to add additional method in class implements interface
 }
