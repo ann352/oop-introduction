@@ -1,14 +1,13 @@
 package polymorphism.Drive;
 
-import polymorphism.File;
+import polymorphism.files.File;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class HDDDrive implements Drive {
 
-    List<File> files = new ArrayList<>();
+    private List<File> files = new ArrayList<>();
 
 
     @Override
@@ -31,7 +30,7 @@ public class HDDDrive implements Drive {
 //        Optional<File> foundFile = files.stream()
 //                .filter(file -> file.getName().equals(name))
 //                .findFirst();
-//        return foundFile.orElseThrow();
+//        return foundFile.orElseThrow();  //this elements doesn't work in code
         return null;
     }
 }

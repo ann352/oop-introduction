@@ -11,7 +11,7 @@ public class MemoryStick implements USBDevice {
 
     @Override
     public boolean connected() {
-        System.out.println("Device connected");
+        System.out.println("Memory stick connected");
         return true;
     }
 
@@ -21,9 +21,11 @@ public class MemoryStick implements USBDevice {
             System.out.println("Please eject the device first");
         }
         else{
-            System.out.println("Device disconnected");
+            System.out.println("Memory stick disconnected");
+            return true;
         }
-        return true;
+
+        return false;
     }
 
     @Override

@@ -10,13 +10,13 @@ public class Mouse implements USBDevice {
 
     @Override
     public boolean connected() {
-        System.out.println("Device connected");
+        System.out.println("Mouse connected");
         return true;
     }
 
     @Override
     public boolean disconnected() {
-        System.out.println("Device disconnected");
+        System.out.println("Mouse disconnected");
         return true;
     }
 

@@ -1,6 +1,6 @@
 package polymorphism.Drive;
 
-import polymorphism.File;
+import polymorphism.files.File;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -9,11 +9,13 @@ import java.util.Map;
 public class SSDDrive implements Drive {
 
 
-    Map<String, File> files = new HashMap<>();
+    private Map<String, File> files = new HashMap<>();
 
     @Override //we override methods from interface
     public void addFile(File file) {
-        files.put(file.toString(), file);
+        files.put(file.getName(), file);
+        // due inserting new object by usingmethod .toString() we had npe here -> files.put(file.toString(), file);
+        // and later we couldn't find proper file by name
 
     }
 
@@ -32,6 +34,11 @@ public class SSDDrive implements Drive {
     @Override
     public File findFile(String name) {    //we take our map and from map we take file with given name
         return files.get(name);
+    // we see here method get() which returns from map 'files' by using key 'name' -> its value
+    // now we can look what is happen in this map by clicking on her name -> Alt + shift + F8
+    // now we see that in map we passes no name of key, but we use calling method toString() on the object -> we have to improve it
+    // we have to fix it in method add()
+        // after checking what is wrong we can turn off debug by clicking red square
 
     }
 

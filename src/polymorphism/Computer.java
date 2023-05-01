@@ -12,7 +12,7 @@ public class Computer {
     private Drive drive;   //when we add to the field - final, the field is only to read and it's initialized once - by constructor
     private Headphones headphones;  //we add type of access to the field
 
-    List<USBDevice> usbDevices = new ArrayList<>();
+    private List<USBDevice> usbDevices = new ArrayList<>(); //fields should have access private here
    //list of objects that implements interface USBDevices
     // at first I have forgotten to initialize that list
 
@@ -54,7 +54,6 @@ public class Computer {
     public void addUSBDevice(USBDevice usbDevice) {
         boolean isConnected = usbDevice.connected(); // here on USB device we call method connected
         if (isConnected) {   // and if USB device is connected (boolean isConnected = true) then we can add new device
-            System.out.println("USB device connected");
             usbDevices.add(usbDevice);
         }
     } // method that add new USB device
@@ -85,9 +84,11 @@ public class Computer {
 //        }
 //    }
 
+    //the last version of the method
 
     public void removeUSBDevice(USBDevice usbDevice) {
         boolean isDisconnected = usbDevice.disconnected();
+
         if (isDisconnected) {
             usbDevices.remove(usbDevice);
         }

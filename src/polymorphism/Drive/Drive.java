@@ -1,6 +1,6 @@
 package polymorphism.Drive;
 
-import polymorphism.File;
+import polymorphism.files.File;
 
 public interface Drive {
 
