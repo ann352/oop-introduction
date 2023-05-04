@@ -49,7 +49,7 @@ public class Main {
 
         GIFImageFile gif1 = new GIFImageFile("nazwa1.gif", 100);
         JPGImageFile jpg1 = new JPGImageFile("nazwa1.jpg", 100, 80);
-        MP3MusicFile mp3MusicFile = new MP3MusicFile(200, "plik.MP3", 200, "David Guetta", "Koko");
+        MP3MusicFile mp3MusicFile = new MP3MusicFile("mp3.file",150,"Lady Punk","U Maksyma w Gdynii",80);
 
         HDDDrive drive2 = new HDDDrive(); // we can put here also Drive object instead SSDDrive drive2 = new SSDDrive();
         // or HDDDrive();
@@ -60,13 +60,30 @@ public class Main {
         drive2.listFiles();
 
         File drive2File = drive2.findFile("plik.MP3");
-        System.out.println(drive2File.getSize()); // in this line we have null pointer exceptiom
+//        System.out.println(drive2File.getSize()); // in this line we have null pointer exceptiom
         //so we have to check what is wrong with debugger, and we set breakpoint at 59 line
         // and we run our code in debug mode, we stop on 59 line and we chose F7 to go into this method -> Alt + shift + F8,
         // or evaluate expression
 
+        //new informations -> methods overloading - means the same signature of method but different arguments
+        // -> method overriding means -> overriding the method defined in the base class, when we want to give a new meaning to an inheriting class
+        // eg. we have AbstractFile with method getName() and we have AbstractMusicFile that inherit after AbstractClass
+        // and MP3MusicFile inherit also method getName() after AbstractClass
+        // so for example when we create new object MP3MusicFile we can use getName() method
+        MP3MusicFile mp3MusicFile1 = new MP3MusicFile("mp3.file", 100, "The cool kids of death", "Gwożdzie i butelki", 80);
+        mp3MusicFile1.getName(); //in MP3MusicFile we can overide this method -> click generate and chose which method
+
+        // we have method toString() in class Object from inherit all the Objects
+        // and we can override this method with chosen fields -> example MP3MusicFile
+
+
+        //instanceOf
+
+
+
+
+
+
+
     }
-
-
-
 }
