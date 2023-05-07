@@ -1,6 +1,5 @@
 package polymorphism;
 
-import polymorphism.Drive.Drive;
 import polymorphism.Drive.HDDDrive;
 import polymorphism.Drive.SSDDrive;
 import polymorphism.files.File;
@@ -9,6 +8,9 @@ import polymorphism.files.imagefile.JPGImageFile;
 import polymorphism.files.musicfile.MP3MusicFile;
 import polymorphism.usbdevice.MemoryStick;
 import polymorphism.usbdevice.Mouse;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -78,12 +80,41 @@ public class Main {
 
 
         //instanceOf
+        JPGImageFile jpgImageFile = new JPGImageFile("plik.jpg", 3, 100);
+        System.out.println(jpgImageFile instanceof JPGImageFile);
+        GIFImageFile gifImageFile = new GIFImageFile("plik.gif", 200);
 
+        //now we create a list that will expect files
+        List<File> files = new ArrayList<>();
 
+        //and to the list we will add our new files
+        files.add(jpgImageFile);
+        files.add(gifImageFile);
 
+        //and now if we will to ierate over our list
+        for ( File file : files){
+            if(file instanceof JPGImageFile){
+                System.out.println("That file is a JPGImageFile");
+            }
+            else if(file instanceof GIFImageFile){
+                System.out.println("That file is a GIFImageFile");
+            }
 
+        }
 
+        // in Java 8 we have for interfaces default methods
+        // e.g if we add new method to interface - instead of adding this method to all classes that use this interface
+        // example of using ovveriden deafault method from interface
 
+        GIFImageFile gifImageFile3 = new GIFImageFile("file3.GIF", 100);
+        System.out.println(gifImageFile3.getVersion());
 
+        // next concept -> static fields and methods -> for which we don't create an object of class with such field or such method
+        // class Monitor -> to create static field we have to add 'static' description and name field with capital letters
+        // we use static fields and methods in this way:
+
+        System.out.println(Monitor.MAX_HEIGHT);
+        System.out.println(Monitor.getMaxHeight());
+        //those fields and methods we use usually in utils clasess e.g. when we need to calculate somethig
     }
 }

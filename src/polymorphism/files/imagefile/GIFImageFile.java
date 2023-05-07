@@ -18,4 +18,9 @@ public class GIFImageFile extends AbstractImageFile {
     public void showAnimation(){
         System.out.println("Showing funny animation");
     }
+
+    @Override
+    public int getVersion() {
+        return 2;
+    }
 }

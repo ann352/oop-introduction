@@ -30,7 +30,7 @@ public class HDDDrive implements Drive {
 //        Optional<File> foundFile = files.stream()
 //                .filter(file -> file.getName().equals(name))
 //                .findFirst();
-//        return foundFile.orElseThrow();  //this elements doesn't work in code
+//        return foundFile.orElseThrow();  //za stara java dlatego to nie dziala?
         return null;
     }
 }
